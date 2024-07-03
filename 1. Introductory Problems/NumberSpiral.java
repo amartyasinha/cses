@@ -1,15 +1,21 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class NumberSpiral {
     public static void main(String[] args) {
-        try(Scanner scanner = new Scanner(System.in)){
-            long t = scanner.nextLong();
+        try(
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))
+        ){
+            long t = Long.parseLong(br.readLine());
 
             for (long i = 0; i < t; i++){
-                long y = scanner.nextLong();
-                long x = scanner.nextLong();
-                System.out.println(infiniteGrid(y, x));
+                long y = Long.parseLong(br.readLine());
+                long x = Long.parseLong(br.readLine());
+                bw.write(String.valueOf(infiniteGrid(y, x)));
+                bw.newLine();
             }
+        } catch (IOException e) {
+            System.err.println("Error reading: " + e.getMessage());
         }
     }
 
