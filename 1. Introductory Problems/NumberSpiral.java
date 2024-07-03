@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class NumberSpiral {
     public static void main(String[] args) {
         try(Scanner scanner = new Scanner(System.in)){
-            int t = scanner.nextInt();
+            long t = scanner.nextLong();
 
-            for (int i = 0; i < t; i++){
-                int y = scanner.nextInt();
-                int x = scanner.nextInt();
+            for (long i = 0; i < t; i++){
+                long y = scanner.nextLong();
+                long x = scanner.nextLong();
                 System.out.println(infiniteGrid(y, x));
             }
         }
     }
 
-    private static int infiniteGrid(int y, int x) {
+    private static long infiniteGrid(long y, long x) {
         if (y > x){
             if ((y & 1) == 1){
                 return (y - 1) * (y - 1) + x;
