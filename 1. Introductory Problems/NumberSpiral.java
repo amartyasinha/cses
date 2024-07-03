@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class NumberSpiral {
     public static void main(String[] args) {
@@ -9,8 +10,9 @@ public class NumberSpiral {
             long t = Long.parseLong(br.readLine());
 
             for (long i = 0; i < t; i++){
-                long y = Long.parseLong(br.readLine());
-                long x = Long.parseLong(br.readLine());
+                StringTokenizer tk = new StringTokenizer(br.readLine());
+                long y = Long.parseLong(tk.nextToken());
+                long x = Long.parseLong(tk.nextToken());
                 bw.write(String.valueOf(infiniteGrid(y, x)));
                 bw.newLine();
             }
