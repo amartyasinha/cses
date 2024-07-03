@@ -8,10 +8,10 @@ public class Permutation {
         if (n == 2 || n == 3){
             return new StringBuilder("NO  SOLUTION");
         }
-        for (long i = 1; i <= n; i += 2){
+        for (long i = n-1; i >= 1; i -= 2){
             str.append(i).append(" ");
         }
-        for (long i = 2; i <=n; i += 2){
+        for (long i = n; i >= 1; i -= 2){
             str.append(i).append(" ");
         }
         return str;
