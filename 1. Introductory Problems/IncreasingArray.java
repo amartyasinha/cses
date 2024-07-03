@@ -2,35 +2,34 @@ import java.util.Scanner;
 
 public class IncreasingArray {
 
-    public static int IncreasingArrayFunc(int[] arr){
-        int totalCount = 0;
+    public static long IncreasingArrayFunc(long[] arr, int num){
+        long totalCount = 0;
 
-        for (int i = 0; i < arr.length; i++){
-            for (int j = i+1; j < arr.length-1; j++){
-                if (arr[i]>arr[j]){
-                    arr[j] += arr[j];
-                }
+        for (int i = 1; i < num; i++){
+            if (arr[i-1]>arr[i]){
+                totalCount += arr[i-1] - arr[i];
+                arr[i] = arr[i-1];
             }
-            totalCount++;
         }
         return totalCount;
     }
+
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)){
-            System.out.print("Enter number: ");
+//            System.out.print("Enter number: ");
             int num = Integer.parseInt(scanner.nextLine());
 
-            System.out.print("Enter all numbers by space: ");
+//            System.out.print("Enter all numbers by space: ");
             String str = scanner.nextLine();
 
             String[] strArr = str.split(" ");
 
-            int[] arr = new int[strArr.length];
+            long[] arr = new long[strArr.length];
 
             for (int i = 0; i < strArr.length; i++){
-                arr[i] = Integer.parseInt(strArr[i]);
+                arr[i] = Long.parseLong(strArr[i]);
             }
-            System.out.println(IncreasingArrayFunc(arr));
+            System.out.println(IncreasingArrayFunc(arr, num));
         }
     }
 }

@@ -12,10 +12,10 @@ public class MissingNumber {
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter number: ");
+//            System.out.print("Enter number: ");
             int num = Integer.parseInt(scanner.nextLine());
 
-            System.out.printf("Enter string till %d: ", num);
+//            System.out.printf("Enter string till %d: ", num);
             String line = scanner.nextLine();
 
             String[] string = line.split(" ");
